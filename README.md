@@ -17,7 +17,7 @@ This experiment demonstrates how to control the position of an object in Blender
    - Clone this repository or copy the Flask server code.
    - Run the Flask server with the command:
      ```
-     python server_filename.py
+    app.py
      ```
 
    Once running, the server will be available at `http://localhost:5000/position`.
