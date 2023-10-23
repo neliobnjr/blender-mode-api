@@ -1,54 +1,54 @@
-# Movimento Espiral no Blender usando Flask API
+# Spiral Movement in Blender using Flask API
 
-## Descrição
+## Description
 
-Este experimento demonstra como controlar a posição de um objeto no Blender (neste caso, um Cube) usando um servidor Flask API. O objetivo é fazer o Cube mover-se em uma trajetória espiral no plano XY, com a trajetória sendo calculada pelo servidor Flask e o Cube no Blender buscando sua posição atualizada periodicamente.
+This experiment demonstrates how to control the position of an object in Blender (in this case, a Cube) using a Flask API server. The objective is to make the Cube move in a spiral trajectory on the XY plane, with the trajectory being calculated by the Flask server and the Cube in Blender fetching its updated position periodically.
 
-## Requisitos
+## Requirements
 
-- **Blender**: Versão utilizada durante o desenvolvimento: 2.9x.
-- **Python**: Versão utilizada durante o desenvolvimento: 3.8+.
-- **Flask**: Instale via pip com o comando `pip install Flask`.
+- **Blender**: Version used during development: 2.9x.
+- **Python**: Version used during development: 3.8+.
+- **Flask**: Install via pip with the command `pip install Flask`.
 
-## Configuração e Uso
+## Setup and Usage
 
-1. **Configuração do servidor Flask**:
+1. **Setting up the Flask server**:
 
-   - Clone este repositório ou copie o código do servidor Flask.
-   - Execute o servidor Flask com o comando:
+   - Clone this repository or copy the Flask server code.
+   - Run the Flask server with the command:
      ```
-     python nome_do_arquivo_do_servidor.py
+     python server_filename.py
      ```
 
-   Após a execução, o servidor estará disponível em `http://localhost:5000/position`.
+   Once running, the server will be available at `http://localhost:5000/position`.
 
-2. **Configuração no Blender**:
+2. **Setup in Blender**:
 
-   - Abra o Blender e importe o script Python.
-   - Execute o script no Blender. Isso fará com que o Blender faça consultas contínuas ao servidor Flask para obter a posição atualizada do Cube.
+   - Open Blender and import the Python script.
+   - Execute the script within Blender. This will start Blender continuously polling the Flask server to get the updated position of the Cube.
 
-3. **Movimento Espiral**:
+3. **Spiral Movement**:
 
-   - Com o servidor em execução e o script no Blender ativado, o Cube começará a mover-se em uma trajetória espiral no plano XY.
+   - With the server running and the script in Blender activated, the Cube will start moving in a spiral trajectory on the XY plane.
 
-## Como Funciona
+## How It Works
 
-1. **Cálculo da Espiral**:
-   - Utilizamos a espiral de Arquimedes para calcular a trajetória do Cube.
-   - A cada requisição ao servidor Flask, ele calcula a próxima posição na trajetória e retorna as coordenadas para o Blender.
+1. **Spiral Calculation**:
+   - We use the Archimedean spiral to calculate the Cube's trajectory.
+   - With each request to the Flask server, it calculates the next position in the trajectory and returns the coordinates to Blender.
 
-2. **Comunicação Blender-Flask**:
-   - O Blender consulta o servidor Flask periodicamente. Ao receber uma nova posição, move o Cube para essa nova posição.
+2. **Blender-Flask Communication**:
+   - Blender polls the Flask server periodically. Upon receiving a new position, it moves the Cube to that new position.
 
-## Limitações e Melhorias Futuras
+## Limitations and Future Improvements
 
-- Atualmente, o movimento é restrito ao plano XY. Poderíamos estender isso para 3D.
-- Estamos usando `polling` para obter as atualizações. Uma abordagem baseada em WebSockets poderia ser mais eficiente.
+- Currently, the movement is restricted to the XY plane. We could extend this to 3D.
+- We're using `polling` to fetch updates. A WebSocket-based approach might be more efficient.
 
-## Contribuições
+## Contributions
 
-Contribuições são bem-vindas! Seja para aprimorar o movimento, otimizar o código ou introduzir novas funcionalidades.
+Contributions are welcome! Be it to enhance the movement, optimize the code, or introduce new features.
 
-## Licença
+## License
 
-Este projeto está licenciado sob a licença MIT.
+This project is licensed under the MIT license.
